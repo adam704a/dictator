@@ -1,0 +1,3 @@
+# Running Dictator
+
+`gulp build`
