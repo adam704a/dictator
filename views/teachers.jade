@@ -1,8 +1,23 @@
 extends layout
 
 block content
-	div(class="ui three column centered grid")
-		div(class="four column centered row")
-			h1 Teachers Starting Line
-		div(class="four column centered row")
-			a(href='/logout') Logout
+	div(class="ui text container")
+		h2(class="ui header") Teachers Starting Line
+		div(class="ui three item menu")
+			a(class="active item") Starting Line
+			a(class="item") Classes
+			a(class="item") Resources
+		
+		div(class="ui form")
+			div(class="field")
+				input(type="text" placeholder="Enter Resource Title Here")
+			div(class="field")
+				textarea(placeholder="Type your new running dictation here.  Seperate each slide by pressing the return button.")
+			div(class="two fields")
+				div(class="field")
+					label Tags
+					input(type="text" placeholder="Enter Tags")
+				div(class="field")
+					label Class
+					input(type="text" placeholder="Enter Classes")
+			div(class="ui primary submit button") Submit

@@ -15,7 +15,7 @@ var routes = require('./routes/index');
 var users = require('./routes/user');
 var teachers = require('./routes/teachers');
 var students = require('./routes/students');
-var user = require('./routes/user');
+var starting_line = require('./routes/user');
 
 // Configure Passport to use Auth0
 
@@ -67,7 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/teachers', teachers);
 app.use('/students', students);
-app.use('/user', user);
+app.use('/user', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
