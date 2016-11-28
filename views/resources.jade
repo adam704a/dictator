@@ -1,0 +1,30 @@
+extends auth_layout
+
+block content
+	div(class="ui text container")
+		h2(class="ui header") Resources
+		div(class="ui three item menu" style="margin-bottom: 45px")
+			a(class="item" href="/teachers") Starting Line
+			a(class="item" href="/classes") Classes
+			a(class="active item" href="#") Resources
+
+		div
+			table(class="ui celled table")
+				thead
+					tr
+						th Title
+						th Date
+						th Class
+				tbody
+					tr
+						td 
+							a(href="/storyboard" title="Go to storyboard") Breast Lifts Improvement Without Implants
+						td 02/10/2016
+						td French 2
+					tr
+						td 
+							a(href="/storyboard" title="Go to storyboard") Maui By Air The Best Way Around The Island
+						td 02/10/2016
+						td French 1
+		
+

@@ -13,9 +13,7 @@ dotenv.load();
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
-var teachers = require('./routes/teachers');
-var students = require('./routes/students');
-var starting_line = require('./routes/user');
+
 
 // Configure Passport to use Auth0
 
@@ -65,8 +63,6 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/teachers', teachers);
-app.use('/students', students);
 app.use('/user', users);
 
 // catch 404 and forward to error handler
