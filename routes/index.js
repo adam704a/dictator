@@ -33,7 +33,7 @@ router.get('/classes', ensureLoggedIn, function(req, res, next) {
   res.render('classes', { title: 'Running Dictator' });
 });
 
-router.get('/teachers', ensureLoggedIn,, function(req, res, next) {
+router.get('/teachers', ensureLoggedIn, function(req, res, next) {
   res.render('teachers', { title: 'Running Dictator' });
 });
 
