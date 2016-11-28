@@ -29,11 +29,11 @@ router.get('/callback',
     res.redirect(req.session.returnTo || '/teachers');
   });
 
-router.get('/classes', function(req, res, next) {
+router.get('/classes', ensureLoggedIn, function(req, res, next) {
   res.render('classes', { title: 'Running Dictator' });
 });
 
-router.get('/teachers', function(req, res, next) {
+router.get('/teachers', ensureLoggedIn,, function(req, res, next) {
   res.render('teachers', { title: 'Running Dictator' });
 });
 
@@ -41,11 +41,11 @@ router.get('/students', function(req, res, next) {
   res.render('students', { title: 'Running Dictator' });
 });
 
-router.get('/resources', function(req, res, next) {
+router.get('/resources', ensureLoggedIn, function(req, res, next) {
   res.render('resources', { title: 'Running Dictator' });
 });
 
-router.get('/storyboard', function(req, res, next) {
+router.get('/storyboard', ensureLoggedIn, function(req, res, next) {
   res.render('storyboard', { title: 'Running Dictator' });
 });
 
