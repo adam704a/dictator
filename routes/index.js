@@ -42,9 +42,6 @@ router.get('/students', function(req, res, next) {
   res.render('students', { title: 'Running Dictator' });
 });
 
-router.get('/resources', ensureLoggedIn, function(req, res, next) {
-  res.render('resources', { title: 'Running Dictator' });
-});
 
 router.get('/storyboard', ensureLoggedIn, function(req, res, next) {
   res.render('storyboard', { title: 'Running Dictator' });

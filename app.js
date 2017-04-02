@@ -8,16 +8,26 @@ var passport = require('passport');
 var session = require('express-session');
 var Auth0Strategy = require('passport-auth0');
 var dotenv = require('dotenv');
+var MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
 
 dotenv.load();
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
+var resources = require('./routes/resources');
 
+
+// Connection URL (i.e. 'mongodb://localhost:27017/running_dictator')
+var url = process.env.MONGO_URL;
+
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+  db.close();
+});
 
 // Configure Passport to use Auth0
-
-
 var strategy = new Auth0Strategy({
     domain:       process.env.AUTH0_DOMAIN,
     clientID:     process.env.AUTH0_CLIENT_ID,
@@ -62,7 +72,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Define Routes
 app.use('/', routes);
+app.use('/resources', resources);
 app.use('/user', users);
 
 // catch 404 and forward to error handler
